@@ -1,0 +1,78 @@
+footer.copyright: "Copyright © 2022 Sretno Srce. Sva prava pridržana."
+footer.development: "Development by: "
+
+# Main menu
+main_menu.item.homepage.title: "Naslovnica"
+main_menu.item.about_us.title: "O Nama"
+main_menu.item.our_authors.title: "Naši autori"
+main_menu.item.product.title: "Knjige & Slikovnice"
+main_menu.item.blog.title: "Novosti"
+main_menu.item.video.title: "Video"
+main_menu.item.contact.title: "Kontakt"
+
+# Footer menu
+footer_menu.item.privacy_statement.title: "Pravila o privatnosti i uvjeti korištenja"
+footer_menu.item.products.title: "Shop"
+footer_menu.item.faq.title: "Faq"
+footer_menu.item.contact.title: "Kontakt"
+
+# Footer
+footer.logo.text: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered duskam alteration variations of passages hr"
+
+# Homepage us #homepage
+homepage.section.featured_products.title: "Izdvojeni proizvodi"
+homepage.section.featured_products.subtitle: "Lorem Ipsum available, but the majority have suffered lebmid alteration in some ledmid"
+homepage.section.all_products.title: "Svi proizvodi"
+homepage.section.all_products.subtitle: "Lorem Ipsum available, but the majority have suffered lebmid alteration in some ledmid"
+homepage.section.blog.title: "Naš blog"
+homepage.section.blog.subtitle: "Lorem Ipsum available, but the majority have suffered lebmid alteration in some ledmid"
+
+# About us #about_us
+about_us.page.title: "O nama"
+about_us.page.subtitle: "„Jedne divne noći, u jednoj divnoj priči, rodilo se Sretno Srce.“"
+about_us.page.content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed enim eros, mollis id enim tempor, semper mollis metus. Praesent tortor odio, accumsan et erat quis, tempor elementum justo. Donec suscipit ultrices nunc. Fusce diam felis, pretium et mi nec, tempor porta quam. Duis auctor nisi eget sapien tincidunt volutpat. Sed lobortis gravida ornare. Sed mollis ipsum non quam elementum, vel suscipit mauris consequat. Aenean commodo lectus vitae metus mollis, ut auctor nisl aliquam. Nam turpis arcu, fringilla in quam quis, ultrices consequat nisi. Sed facilisis efficitur nunc. Nulla accumsan, libero id cursus tincidunt, dui est maximus ipsum, vitae ultrices justo arcu sed libero. hr"
+
+# Our authors #our_authors
+our_authors.page.title: "Naši autori"
+our_authors.page.subtitle: "Subtitle hr"
+
+# Product #product
+product.sidebar.widget_1.title: "Kategorije"
+product.sidebar.widget_2.title: "Tagovi"
+product.orderby.title: "Poredaj po"
+
+# Post #post
+post.page.title: "Novosti"
+post.sidebar.widget_1.title: "Kategorije"
+post.sidebar.widget_2.title: "Tagovi"
+
+# Video #video
+video.page.title: "Video"
+video.sidebar.widget_1.title: "Kategorije"
+
+# Contact #contact
+contact.page.form.title: "Javite se"
+contact.page.form.subtitle: "Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum."
+contact.page.meta.title: "Kontakt informacije"
+contact.page.meta.subtitle: "Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima."
+contact.page.meta.address: "Adresa:"
+contact.page.meta.phone: "Broj telefona:"
+contact.page.meta.email: "Email adresa:"
+contact.page.meta.website: "Web adresa:"
+
+# Buttons
+button.order.text: "Naruči"
+button.read_more.text: "Pročitaj više"
+button.send_email.text: "Pošalji e-mail"
+
+# Forms
+form.name.label: "Ime"
+form.name.placeholder: "Ime"
+form.surname.label: "Prezime"
+form.surname.placeholder: "Prezime"
+form.email.label: "Email"
+form.email.placeholder: "Email"
+form.subject.label: "Tema"
+form.subject.placeholder: "Tema"
+form.message.label: "Poruka"
+form.message.placeholder: "Ovdje unesite svoju poruku.."

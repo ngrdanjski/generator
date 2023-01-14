@@ -1,0 +1,78 @@
+footer.copyright: "Copyright © 2022 Sretno Srce. All rights reserved.:"
+footer.development: "Development by: "
+
+# Main menu
+main_menu.item.homepage.title: "Homepage"
+main_menu.item.about_us.title: "About Us"
+main_menu.item.our_authors.title: "Our authors"
+main_menu.item.product.title: "Books & Picture Books"
+main_menu.item.blog.title: "Blog"
+main_menu.item.video.title: "Video"
+main_menu.item.contact.title: "Contact"
+
+# Footer menu
+footer_menu.item.privacy_statement.title: "Privacy Policy and Terms of Use"
+footer_menu.item.products.title: "Shop"
+footer_menu.item.faq.title: "Faq"
+footer_menu.item.contact.title: "Contact"
+
+# Homepage us #homepage
+homepage.section.featured_products.title: "Featured products"
+homepage.section.featured_products.subtitle: "Lorem Ipsum available, but the majority have suffered lebmid alteration in some ledmid"
+homepage.section.all_products.title: "All products"
+homepage.section.all_products.subtitle: "Lorem Ipsum available, but the majority have suffered lebmid alteration in some ledmid"
+homepage.section.blog.title: "Our blog"
+homepage.section.blog.subtitle: "Lorem Ipsum available, but the majority have suffered lebmid alteration in some ledmid"
+
+# Footer
+footer.logo.text: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered duskam alteration variations of passages en"
+
+# About us #about_us
+about_us.page.title: "About us"
+about_us.page.subtitle: "Subtitle en"
+about_us.page.content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed enim eros, mollis id enim tempor, semper mollis metus. Praesent tortor odio, accumsan et erat quis, tempor elementum justo. Donec suscipit ultrices nunc. Fusce diam felis, pretium et mi nec, tempor porta quam. Duis auctor nisi eget sapien tincidunt volutpat. Sed lobortis gravida ornare. Sed mollis ipsum non quam elementum, vel suscipit mauris consequat. Aenean commodo lectus vitae metus mollis, ut auctor nisl aliquam. Nam turpis arcu, fringilla in quam quis, ultrices consequat nisi. Sed facilisis efficitur nunc. Nulla accumsan, libero id cursus tincidunt, dui est maximus ipsum, vitae ultrices justo arcu sed libero. en"
+
+# Our authors #our_authors
+our_authors.page.title: "Our authors"
+our_authors.page.subtitle: "Subtitle en"
+
+# Product #product
+product.sidebar.widget_1.title: "Categories"
+product.sidebar.widget_2.title: "Tags"
+product.orderby.title: "Order by"
+
+# Post #post
+post.page.title: "Blog"
+post.sidebar.widget_1.title: "Categories"
+post.sidebar.widget_2.title: "Tags"
+
+# Video #video
+video.page.title: "Videos"
+video.sidebar.widget_1.title: "Categories"
+
+# Contact #contact
+contact.page.form.title: "Get in touch"
+contact.page.form.subtitle: "Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum."
+contact.page.meta.title: "Get office info."
+contact.page.meta.subtitle: "Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima."
+contact.page.meta.address: "Address:"
+contact.page.meta.phone: "Phone Number:"
+contact.page.meta.email: "Email address:"
+contact.page.meta.website: "Website address:"
+
+# Buttons
+button.order.text: "Order"
+button.read_more.text: "Read more"
+button.send_email.text: "Send Email"
+
+# Forms
+form.name.label: "Name"
+form.name.placeholder: "Name"
+form.surname.label: "Surname"
+form.surname.placeholder: "Surname"
+form.email.label: "Email"
+form.email.placeholder: "Email"
+form.subject.label: "Subject"
+form.subject.placeholder: "Subject"
+form.message.label: "Message"
+form.message.placeholder: "Type your message here.."
