@@ -1,0 +1,14 @@
+body {
+  font-family: $fontRajdhani;
+  overflow-y: auto;
+}
+
+::-moz-selection {
+  color: #ffffff;
+  background: #a29061;;
+}
+
+::selection {
+  color: #ffffff;
+  background: #a29061;;
+}

@@ -1,19 +1,51 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
+<html lang="hr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, maximum-scale=3.0 user-scalable=0'>
+    <title>{% block title %}{% endblock %}</title>
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+    {% if app.environment == 'prod' %}
+        <!-- Google Tag Manager -->
+        <!-- End Google Tag Manager -->
+    {% endif %}
+
+    {% block headMeta %}{% endblock %}
+
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+
+    {% block headJavascripts %}
+    {% endblock %}
+</head>
+<body>
+
+    {% if app.environment == 'prod' %}
+        <!-- Google Tag Manager (noscript) -->
+        <!-- End Google Tag Manager (noscript) -->
+    {% endif %}
+
+    <div id="app">
+
+        {% include 'includes/_header.html.twig' %}
+
+        {% include 'includes/_aside-mobile.html.twig' %}
+
+        <main>
+            {% block main %}{% endblock %}
+        </main>
+
+        {% include 'includes/_footer.html.twig' %}
+
+        <div class="back-to-top">
+            <svg width="18" height="22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.816.268H1.186a1.19 1.19 0 00-1.16 1.22 1.19 1.19 0 001.16 1.22h15.63a1.19 1.19 0 001.21-1.22 1.192 1.192 0 00-1.21-1.22zM9.826 4.867l-.18-.15h-.09l-.11-.06h-.22a1.14 1.14 0 00-.45 0h-.22l-.11.06h-.09l-.18.15-5.87 6.17a1.26 1.26 0 000 1.73 1.11 1.11 0 001.64 0l3.89-4.08v11.36a1.17 1.17 0 102.33 0V8.687l3.86 4.08a1.111 1.111 0 001.64 0 1.26 1.26 0 000-1.73l-5.84-6.17z" fill="#fff"/></svg>
+        </div>
+
+    </div>
+    {% block footerJavascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+
+</body>
 </html>
