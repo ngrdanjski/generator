@@ -3,33 +3,57 @@
 namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
+use ApiPlatform\Metadata\Delete;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\GetCollection;
+use ApiPlatform\Metadata\Patch;
+use ApiPlatform\Metadata\Post;
+use ApiPlatform\Metadata\Put;
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Uid\Uuid;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
-#[ApiResource]
+#[ApiResource(
+    denormalizationContext: ['groups' => ['write']],
+    normalizationContext: ['groups' => ['read']]
+)]
+#[GetCollection]
+#[Post(security: "is_granted('ROLE_SUPER_ADMIN')")]
+#[Get]
+#[Put(security: "is_granted('ROLE_SUPER_ADMIN')")]
+#[Delete(security: "is_granted('ROLE_SUPER_ADMIN')")]
+#[Patch(security: "is_granted('ROLE_SUPER_ADMIN')")]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
-    #[ORM\GeneratedValue]
-    #[ORM\Column]
-    private ?int $id = null;
+    #[ORM\Column(type: 'uuid', unique: true)]
+    #[Groups(['read'])]
+    private ?string $id = null;
 
     #[ORM\Column(length: 180, unique: true)]
+    #[Groups(['read', 'write'])]
     private ?string $email = null;
 
     #[ORM\Column]
+    #[Groups(['read', 'write'])]
     private array $roles = [];
 
-    /**
-     * @var string The hashed password
-     */
     #[ORM\Column]
     private ?string $password = null;
 
-    public function getId(): ?int
+    #[Groups(['write'])]
+    private ?string $plainPassword = null;
+
+    public function __construct()
+    {
+        $this->id = Uuid::v4();
+    }
+
+    public function getId(): ?string
     {
         return $this->id;
     }
@@ -114,7 +138,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     public function eraseCredentials()
     {
-        // If you store any temporary, sensitive data on the user, clear it here
-        // $this->plainPassword = null;
+         $this->plainPassword = null;
+    }
+
+    public function getPlainPassword(): ?string
+    {
+        return $this->plainPassword;
+    }
+
+    public function setPlainPassword(string $plainPassword): self
+    {
+        $this->plainPassword = $plainPassword;
+
+        return $this;
     }
 }
