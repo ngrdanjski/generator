@@ -5,4 +5,11 @@
 {% block main %}
     <h1>Homepage</h1>
     {{ 'main_menu.item.contact.title'|trans }}
+
+    <ul>
+        {% for file in media %}
+            <li><img src="{{ file.fileName | imagine_filter('50x50') }}" alt="">{{ file.fileName }}</li>
+            <li><img src="{{ file.path }}" alt="">{{ file.fileName }}</li>
+        {% endfor %}
+    </ul>
 {% endblock %}

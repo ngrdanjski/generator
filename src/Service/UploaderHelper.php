@@ -19,7 +19,7 @@ class UploaderHelper
         $this->requestStackContext = $requestStackContext;
     }
 
-    public function uploadImage(File $file, ?string $existingFilename): string
+    public function uploadFile(File $file, ?string $existingFilename): array
     {
         if ($file instanceof UploadedFile) {
             $originalFilename = $file->getClientOriginalName();
@@ -36,6 +36,7 @@ class UploaderHelper
                 $stream
             );
         } catch (FilesystemException $e) {
+            throw new \Error($e);
         }
 
         if (is_resource($stream)) {
@@ -46,13 +47,17 @@ class UploaderHelper
             try {
                 $this->filesystem->delete($existingFilename);
             } catch (FilesystemException $e) {
+                throw new \Error($e);
             }
         }
 
-        return $newFilename;
+        return [
+            'newFilename' => $newFilename,
+            'size' => $file->getSize()
+        ];
     }
 
-    public function deleteImage(?string $existingFilename): string
+    public function deleteFile(?string $existingFilename): string
     {
         if ($existingFilename) {
             try {
