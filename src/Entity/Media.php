@@ -9,12 +9,15 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Uid\Uuid;
 use Gedmo\Mapping\Annotation as Gedmo;
+use ApiPlatform\Metadata\ApiFilter;
+use ApiPlatform\Doctrine\Orm\Filter\OrderFilter;
 
 #[ORM\Entity(repositoryClass: MediaRepository::class)]
 #[ApiResource(
-    normalizationContext: ['groups' => ['read']],
-    denormalizationContext: ['groups' => ['write']]
+    denormalizationContext: ['groups' => ['write']],
+    normalizationContext: ['groups' => ['read']]
 )]
+#[ApiFilter(OrderFilter::class, properties: ['fileName'], arguments: ['orderParameterName' => 'order'])]
 class Media
 {
     #[ORM\Id]
@@ -33,6 +36,26 @@ class Media
     #[ORM\Column(length: 255)]
     #[Groups(['read', 'write'])]
     private ?string $size = null;
+
+    #[ORM\Column(length: 255)]
+    #[Groups(['read', 'write'])]
+    private ?string $type = null;
+
+    #[ORM\Column(length: 255)]
+    #[Groups(['read', 'write'])]
+    private ?string $extension = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    #[Groups(['read', 'write'])]
+    private ?string $altText = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    #[Groups(['read', 'write'])]
+    private ?string $caption = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    #[Groups(['read', 'write'])]
+    private ?string $description = null;
 
     #[ORM\Column(name: 'created', type: Types::DATE_MUTABLE)]
     #[Gedmo\Timestampable(on: 'create')]
@@ -86,6 +109,66 @@ class Media
     public function setSize(string $size): self
     {
         $this->size = $size;
+
+        return $this;
+    }
+
+    public function getType(): ?string
+    {
+        return $this->type;
+    }
+
+    public function setType(string $type): self
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    public function getExtension(): ?string
+    {
+        return $this->extension;
+    }
+
+    public function setExtension(string $extension): self
+    {
+        $this->extension = $extension;
+
+        return $this;
+    }
+
+    public function getAltText(): ?string
+    {
+        return $this->altText;
+    }
+
+    public function setAltText(?string $altText): self
+    {
+        $this->altText = $altText;
+
+        return $this;
+    }
+
+    public function getCaption(): ?string
+    {
+        return $this->caption;
+    }
+
+    public function setCaption(?string $caption): self
+    {
+        $this->caption = $caption;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(?string $description): self
+    {
+        $this->description = $description;
 
         return $this;
     }

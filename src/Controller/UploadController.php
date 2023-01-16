@@ -23,6 +23,8 @@ class UploadController extends AbstractController
         $media->setFileName($filename['newFilename']);
         $media->setPath(self::UPLOAD_PATH . $filename['newFilename']);
         $media->setSize($filename['size']);
+        $media->setType($filename['type']);
+        $media->setExtension($filename['extension']);
 
         $entityManager->persist($media);
         $entityManager->flush();

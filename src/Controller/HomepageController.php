@@ -10,7 +10,13 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class HomepageController extends AbstractController
 {
-    #[Route('/{_locale}', name: 'app_homepage')]
+    #[Route(
+        path: '/{_locale}',
+        name: 'app_homepage',
+        requirements: [
+            '_locale' => 'hr|en',
+        ]
+    )]
     public function index(EntityManagerInterface $entityManager): Response
     {
 

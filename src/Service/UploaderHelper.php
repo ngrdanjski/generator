@@ -53,7 +53,9 @@ class UploaderHelper
 
         return [
             'newFilename' => $newFilename,
-            'size' => $file->getSize()
+            'size' => $file->getSize(),
+            'type' => $file->getType(),
+            'extension' => $file->getClientOriginalExtension(),
         ];
     }
 
