@@ -19,3 +19,39 @@ liip_imagine:
                     size: [ 50, 50 ]
                     mode: outbound
                     allow_upscale: true
+        120x120:
+            filters:
+                thumbnail:
+                    size: [ 120, 120 ]
+                    mode: outbound
+                    allow_upscale: true
+        576x324:
+            filters:
+                thumbnail:
+                    size: [ 576, 324 ]
+                    mode: outbound
+                    allow_upscale: true
+        768x432:
+            filters:
+                thumbnail:
+                    size: [ 768, 432 ]
+                    mode: outbound
+                    allow_upscale: true
+        992x558:
+            filters:
+                thumbnail:
+                    size: [ 992, 558 ]
+                    mode: outbound
+                    allow_upscale: true
+        1200x675:
+            filters:
+                thumbnail:
+                    size: [ 1200, 675 ]
+                    mode: outbound
+                    allow_upscale: true
+        1400x787:
+            filters:
+                thumbnail:
+                    size: [ 1400, 787 ]
+                    mode: outbound
+                    allow_upscale: true

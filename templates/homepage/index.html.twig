@@ -8,8 +8,9 @@
 
     <ul>
         {% for file in media %}
-            <li><img src="{{ file.path | imagine_filter('50x50') }}" alt="{{ file.altText }}">{{ file.fileName }} | {{ file.altText }}</li>
-            <li><img src="{{ file.path }}" alt="">{{ file.fileName }}</li>
+            <li>
+                {% include 'component/img/img.html.twig' with { 'img': file, 'variation': '768x432' } %}
+            </li>
         {% endfor %}
     </ul>
 {% endblock %}

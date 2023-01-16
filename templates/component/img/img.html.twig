@@ -1,0 +1,14 @@
+<figure>
+    <picture>
+        <source srcset="{{ img.path | imagine_filter('1400x787') }}" type="image/png" media="(min-width:1400px)">
+        <source srcset="{{ img.path | imagine_filter('1200x675') }}" type="image/png" media="(min-width:1200px)">
+        <source srcset="{{ img.path | imagine_filter('992x558') }}" type="image/png" media="(min-width:992px)">
+        <source srcset="{{ img.path | imagine_filter('768x432') }}" type="image/png" media="(min-width:768px)">
+        <source srcset="{{ img.path | imagine_filter('576x324') }}" type="image/png" media="(min-width:576px)">
+        <img src="{{ img.path | imagine_filter(variation) }}" alt="{{ img.altText }}">
+    </picture>
+
+    {% if img.caption %}
+    <figcaption>{{ img.caption }}</figcaption>
+    {% endif %}
+</figure>
