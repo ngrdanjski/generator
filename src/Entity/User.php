@@ -3,12 +3,6 @@
 namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
-use ApiPlatform\Metadata\Delete;
-use ApiPlatform\Metadata\Get;
-use ApiPlatform\Metadata\GetCollection;
-use ApiPlatform\Metadata\Patch;
-use ApiPlatform\Metadata\Post;
-use ApiPlatform\Metadata\Put;
 use App\Repository\UserRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
@@ -23,12 +17,6 @@ use Gedmo\Mapping\Annotation as Gedmo;
     denormalizationContext: ['groups' => ['write']],
     normalizationContext: ['groups' => ['read']]
 )]
-#[GetCollection]
-#[Post(security: "is_granted('ROLE_SUPER_ADMIN')")]
-#[Get]
-#[Put(security: "is_granted('ROLE_SUPER_ADMIN')")]
-#[Delete(security: "is_granted('ROLE_SUPER_ADMIN')")]
-#[Patch(security: "is_granted('ROLE_SUPER_ADMIN')")]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]

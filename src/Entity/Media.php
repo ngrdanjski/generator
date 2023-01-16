@@ -2,22 +2,24 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiFilter;
 use ApiPlatform\Core\Annotation\ApiResource;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\OrderFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 use App\Repository\MediaRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Uid\Uuid;
 use Gedmo\Mapping\Annotation as Gedmo;
-use ApiPlatform\Metadata\ApiFilter;
-use ApiPlatform\Doctrine\Orm\Filter\OrderFilter;
 
 #[ORM\Entity(repositoryClass: MediaRepository::class)]
 #[ApiResource(
     denormalizationContext: ['groups' => ['write']],
     normalizationContext: ['groups' => ['read']]
 )]
-#[ApiFilter(OrderFilter::class, properties: ['fileName'], arguments: ['orderParameterName' => 'order'])]
+#[ApiFilter(SearchFilter::class, properties: ['fileName' => 'partial'])]
+#[ApiFilter(OrderFilter::class, properties: ['createdAt'], arguments: ['orderParameterName' => 'order'])]
 class Media
 {
     #[ORM\Id]

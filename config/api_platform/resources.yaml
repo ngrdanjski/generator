@@ -1,0 +1,6 @@
+#resources:
+#    App\Entity\Media:
+#        operations:
+#            ApiPlatform\Metadata\GetCollection:
+#                filters: [ 'offer.search_filter' ]
+#        paginationItemsPerPage: 5

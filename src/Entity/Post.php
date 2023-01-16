@@ -12,8 +12,8 @@ use Gedmo\Mapping\Annotation as Gedmo;
 
 #[ORM\Entity(repositoryClass: PostRepository::class)]
 #[ApiResource(
-    normalizationContext: ['groups' => ['read']],
-    denormalizationContext: ['groups' => ['write']]
+    denormalizationContext: ['groups' => ['write']],
+    normalizationContext: ['groups' => ['read']]
 )]
 class Post
 {
