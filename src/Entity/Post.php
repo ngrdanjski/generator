@@ -47,6 +47,18 @@ class Post
     #[Groups(['read', 'write'])]
     private ?bool $isFeatured = null;
 
+    #[ORM\Column(type: 'string', nullable: true)]
+    #[Groups(['read', 'write'])]
+    private $metaTagTitle;
+
+    #[ORM\Column(type: 'string', nullable: true)]
+    #[Groups(['read', 'write'])]
+    private $metaTagDescription;
+
+    #[ORM\Column(type: 'string', nullable: true)]
+    #[Groups(['read', 'write'])]
+    private $metaTagKeywords;
+
     #[ORM\Column(name: 'created', type: Types::DATE_MUTABLE)]
     #[Gedmo\Timestampable(on: 'create')]
     #[Groups(['read'])]
@@ -135,6 +147,42 @@ class Post
     public function setContent(?string $content): self
     {
         $this->content = $content;
+
+        return $this;
+    }
+
+    public function getMetaTagTitle(): ?string
+    {
+        return $this->metaTagTitle;
+    }
+
+    public function setMetaTagTitle(?string $metaTagTitle): self
+    {
+        $this->metaTagTitle = $metaTagTitle;
+
+        return $this;
+    }
+
+    public function getMetaTagDescription(): ?string
+    {
+        return $this->metaTagDescription;
+    }
+
+    public function setMetaTagDescription(?string $metaTagDescription): self
+    {
+        $this->metaTagDescription = $metaTagDescription;
+
+        return $this;
+    }
+
+    public function getMetaTagKeywords(): ?string
+    {
+        return $this->metaTagKeywords;
+    }
+
+    public function setMetaTagKeywords(?string $metaTagKeywords): self
+    {
+        $this->metaTagKeywords = $metaTagKeywords;
 
         return $this;
     }
